@@ -1,0 +1,41 @@
+Due on 10/21, submit a single file as doc, docx, or pdf in Canvas
+
+1. (10%) A system uses both the Bell-LaPadula and the Biba models to enforce confidentiality and integrity. Show the access control matrix achieved in the system.
+
+2. (20%) Copy "hw3.q2.c" to eros.cs.txstate.edu. In the server, compile the program with the command below.
+gcc -Wall -g3 -O0 -gdwarf-2 -z execstack -fno-stack-protector -o hw3.q2 hw3.q2.c
+Then, in the server, run "gdb hw3.q2". Show the following screenshots.
+(a) Set a break point at the line "strcpy(foo, argv[1]);"
+(b) Run to the break point. Note, type "run 12345", where "12345" is a command-line argument at your choice.
+(c) Show the data in bar, foo, and flag.
+(d) Show the memory addresses of bar, foo, and flag.
+
+3. (10%) In the server, execute "hw3.q2" in command line as "./hw3.q2 12345", where "12345" is a command-line argument at your choice. Show a screenshot of exeuction with a command-line argument where you get the output "You get a flag!!!" at the end of execution.
+
+4. (20%) An integer overflow is the condition that occurs when the result of an arithmetic operation, such as multiplication or addition, exceeds the maximum size of the integer type used to store it. If the integer in question is incremented past the maximum possible value, it may wrap to become a very small, or negative number, therefore providing a very incorrect value. It is often a critical security flaw in software.
+
+For example, in a 16-bit integer system, 19458*37=64586. The result is supposed to be 719946, but has more than 16 bits. Therefore, the result is wrapped, i.e. only the least significant 16 bits of the result remain.
+
+Consider in a 32-bit unsigned integer system, 
+
+(a) Let Z = 0xFEDCBA98. What is the result of Z + 0x10000000 ? Note that the result must be a 32-bit integer, because this is a 32-bit integer system.
+(b) Let Y = 0xFEDCBA98. What is the result of Y * 0x10 ? Note that the result must be a 32-bit integer, because this is a 32-bit integer system.
+(c) Find "X" that satisfies the following equations. Show how you got X.
+
+X > 1337
+X * 7 + 4 = 1337
+
+5. (20%) With a reverse engineering tool, we can identify a Trojan that is normally mixed with the other good code in an executable. Download and install NSA's reverse engineering tool Ghidra from https://ghidra-sre.org/
+(a) Copy "hw3.q5" to eros.cs.txstate.edu. Make it executable (chmod +x hw3.q5) and then execute it. Show the screenshot of running "hw3.q5".
+    Note, after you copy "hw3.q5" to eros, you need to "chmod +x hw3.q5" and then run "./hw3.q5" to execute it.
+(b) Show the screenshot of decompiling the main() function in your reverse engineering tool (Ghidra or Hopper or Snowman).
+(c) Identify the secret input to trigger the Trojan in "hw3.q5" and show the screenshot of the output of the Trojan.
+
+=======
+All CTF docker images are at http://fuxi.cs.txstate.edu/~download/tools/ctf/docker/
+
+No partial points will be assigned to the CTF questions.
+
+6. (10%) Get the CTF docker image of "5.smash". Show the screen shot when you catch the flag. You may read the partial solution.
+
+7. (10%) Get the CTF docker image of "6.droid". Show the screen shot when you catch the flag. You may read the partial solution.
